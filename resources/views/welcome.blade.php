@@ -1,9 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="center jumbotron">
-        <div class="text-center">
-            <h1>My 瞬間英作文</h1>
+    @if (Auth::check())
+        <?php $user = Auth::user(); ?>
+        {{ $user->name }}
+    @else
+        <div class="center jumbotron">
+            <div class="text-center">
+                <h1>My 瞬間英作文</h1>
+                {!! link_to_route('signup.get', 'アカウントを作ってみる', null, ['class' => 'btn btn-lg btn-primary']) !!}
+            </div>
         </div>
-    </div>
+    @endif
 @endsection
