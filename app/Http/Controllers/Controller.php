@@ -10,4 +10,12 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 abstract class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+    
+    public function counts($user) {
+        $count_phrases = $user->phrases()->count();
+        
+        return [
+            'count_phrases' => $count_phrases,
+        ];
+    }
 }

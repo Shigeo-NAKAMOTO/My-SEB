@@ -7,9 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\User;
-
-class UsersController extends Controller
+class PhrasesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,11 +16,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $users = User::paginate(10);
-        
-        return view('users.index', [
-            'users' => $users,
-        ]);
+        //
     }
 
     /**
@@ -43,7 +37,17 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'japanese' => 'required|max:255',
+            'english' => 'required|max:255',
+        ]);
+        
+        $request->user()->phrases()->create([
+            'japanese' => $request->japanese,
+            'english' => $request->english,
+        ]);
+        
+        return redirect('/');
     }
 
     /**
@@ -54,17 +58,7 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        $user = User::find($id);
-        $phrases = $user->phrases()->orderBy('created_at', 'asc')->paginate(10);
-        
-        $data = [
-            'user' => $user,
-            'phrases' => $phrases,
-        ];
-        
-        $data += $this->counts($user);
-        
-        return view('users.show', $data);
+        // return view('phrases.show');
     }
 
     /**
@@ -98,6 +92,12 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $phrase = \App\Phrase::find($id);
+        
+        if( \Auth::user()->id === $phrase->user_id ) {
+            $phrase->delete();
+        }
+        
+        return redirect()->back();
     }
 }
