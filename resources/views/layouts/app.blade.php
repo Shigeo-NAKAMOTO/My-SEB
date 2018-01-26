@@ -23,4 +23,9 @@
             @yield('content')
         </div>
     </body>
+    <footer class="footer text-center">
+        <div class="container">
+            <p class="text-muted">&copy;2018 My瞬間英作文 <a href="https://trello.com/b/W7TIEX94/my%E7%9E%AC%E9%96%93%E8%8B%B1%E4%BD%9C%E6%96%87%E9%96%8B%E7%99%BA%E3%83%AD%E3%83%BC%E3%83%89%E3%83%9E%E3%83%83%E3%83%97" target="_blank">開発ロードマップ</a></p>
+        </div>
+    </footer>
 </html>
