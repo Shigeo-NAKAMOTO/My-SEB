@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Phrase;
+
 class PhrasesController extends Controller
 {
     /**
@@ -16,7 +18,21 @@ class PhrasesController extends Controller
      */
     public function index()
     {
-        //
+        $data = [];
+        if( \Auth::check() )
+        {
+            $user = \Auth::user();
+            $phrases = $user->phrases()->orderBy('created_at', 'asc')->paginate(10);
+            
+            $target_item_index =  mt_rand(0, count($phrases) - 1);
+            $random_phrase = $phrases[$target_item_index];
+            
+            $data = [
+                'user' => $user,
+                'random_phrase' => $random_phrase,
+            ];
+        }
+        return view('phrases.index', $data);
     }
 
     /**
@@ -58,7 +74,10 @@ class PhrasesController extends Controller
      */
     public function show($id)
     {
-        // return view('phrases.show');
+        $phrase = Phrase::find($id);
+        return view('phrases.show', [
+            'phrase' => $phrase,    
+        ]);
     }
 
     /**

@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', 'WelcomeController@index')->name('home');
 
 // ユーザ登録
 Route::get('signup', 'Auth\AuthController@getRegister')->name('signup.get');
@@ -24,5 +24,5 @@ Route::get('logout', 'Auth\AuthController@getLogout')->name('logout.get');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('users', 'UsersController', ['only' => ['index', 'show']]);
-    Route::resource('phrases', 'PhrasesController', ['only' => ['store', 'destroy', 'show']]);
+    Route::resource('phrases', 'PhrasesController', ['only' => ['index', 'store', 'destroy', 'show']]);
 });

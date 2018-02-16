@@ -9,7 +9,7 @@
                     英文
                     {!! Form::textarea('english', old('english'), ['class' => 'form-control', 'rows' => '1', 'placeholder' => 'Hello!']) !!}
                 </div>
-                <div class="col-md-4 col-md-offset-4">
+                <div class="col-md-2 col-md-offset-5">
                 {!! Form::submit('文を登録する', ['class' => 'btn btn-primary btn-block']) !!}
                 </div>
             {!! Form::close() !!}
@@ -17,6 +17,9 @@
                 @if(count($phrases) > 0)
                     @include('phrases.phrases', ['phrases' => $phrases])
                 @endif
+            </div>
+            <div class="col-md-2 col-md-offset-5">
+            {!! link_to_route('phrases.index', 'Start!', null, ['class' => 'btn btn-success btn-block']) !!}
             </div>
         </div>
     @else
