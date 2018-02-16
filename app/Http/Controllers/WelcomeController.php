@@ -20,7 +20,7 @@ class WelcomeController extends Controller
         if( \Auth::check() )
         {
             $user = \Auth::user();
-            $phrases = $user->phrases()->orderBy('created_at', 'asc')->paginate(10);
+            $phrases = $user->phrases()->orderBy('created_at', 'asc')->paginate(8);
             
             $data = [
                 'user' => $user,

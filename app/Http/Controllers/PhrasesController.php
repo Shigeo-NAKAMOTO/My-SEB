@@ -22,7 +22,7 @@ class PhrasesController extends Controller
         if( \Auth::check() )
         {
             $user = \Auth::user();
-            $phrases = $user->phrases()->orderBy('created_at', 'asc')->paginate(10);
+            $phrases = $user->phrases()->orderBy('created_at', 'asc')->paginate(8);
             
             $target_item_index =  mt_rand(0, count($phrases) - 1);
             $random_phrase = $phrases[$target_item_index];
