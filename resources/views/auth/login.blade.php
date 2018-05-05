@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             
-            {!! Form::open(['route' => 'login.post']) !!}
+            {!! Form::open(['url' => URL::to('/login', null, true)]) !!}
                 <div class="form-group">
                     {!! Form::label('email', 'メールアドレス') !!}
                     <p>（アカウント作成時に登録したもの）</p>
