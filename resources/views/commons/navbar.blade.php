@@ -23,7 +23,7 @@
                             </ul>
                         </li>
                     @else
-                        <li>{!! link_to_route('signup.get', 'アカウント作成（無料）') !!}</li>
+                        <li>{!! link_to('signup/', 'アカウント作成（無料）', null, true) !!}</li>
                         <li>{!! link_to('login/', 'ログイン', null, true) !!}</li>
                     @endif
                 </ul>
