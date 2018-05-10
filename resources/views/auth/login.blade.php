@@ -23,7 +23,7 @@
                 {!! Form::submit('ログイン', ['class' => 'btn btn-primary btn-block']) !!}
             {!! Form::close() !!}
             
-            <p>ご利用は初めてですか？{!! link_to_route('signup.get', 'こちらでアカウントを作成') !!}できます。</p>
+            <p>ご利用は初めてですか？{!! link_to('signup/', 'こちらでアカウントを作成', null, true) !!}できます。</p>
         </div>
     </div>
 @endsection
