@@ -17,7 +17,10 @@ class RedirectToHttps
     {
         if ( !$this->is_ssl() && config('app.env') === 'production' )
         {
-            return redirect('https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+            //return redirect('https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+            echo "not secure";
+        } else {
+            
         }
         
         return $next($request);
