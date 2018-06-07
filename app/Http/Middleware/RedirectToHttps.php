@@ -16,10 +16,13 @@ class RedirectToHttps
     public function handle($request, Closure $next)
     {
         $environment = \App::environment();
+        echo $environment;
         if ( !$this->is_ssl() && $environment === 'production' )
         {
             //return redirect('https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
-            echo "not secure";
+            echo "not secure" . "<br/>";
+            echo $_SERVER['HTTP_HOST'] . "<br/>";
+            echo $_SERVER['REQUEST_URI'] . "<br/>";
         } else {
             
         }
