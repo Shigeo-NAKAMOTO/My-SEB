@@ -19,10 +19,8 @@ class RedirectToHttps
         echo $environment;
         if ( !$this->is_ssl() && $environment === 'production' )
         {
-            //return redirect('https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
-            echo "not secure" . "<br/>";
-            echo $_SERVER['HTTP_HOST'] . "<br/>";
-            echo $_SERVER['REQUEST_URI'] . "<br/>";
+            return redirect('https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+            echo "redirected to https";
         } else {
             
         }
