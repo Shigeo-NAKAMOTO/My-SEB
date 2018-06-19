@@ -776,3 +776,35 @@
 [06-Jun-2018 10:43:03 Asia/Tokyo] PHP  25. Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}() /home/ubuntu/workspace/My-SEB/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php:50
 [06-Jun-2018 10:43:03 Asia/Tokyo] PHP  26. call_user_func_array:{/home/ubuntu/workspace/My-SEB/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:124}() /home/ubuntu/workspace/My-SEB/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:124
 [06-Jun-2018 10:43:03 Asia/Tokyo] PHP  27. App\Http\Middleware\RedirectToHttps->handle() /home/ubuntu/workspace/My-SEB/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:124
+[14-Jun-2018 15:16:32 Asia/Tokyo] PHP Fatal error:  Class 'App\Providers\View' not found in /home/ubuntu/workspace/My-SEB/app/Providers/AppServiceProvider.php on line 17
+[14-Jun-2018 15:16:32 Asia/Tokyo] PHP Stack trace:
+[14-Jun-2018 15:16:32 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/My-SEB/server.php:0
+[14-Jun-2018 15:16:32 Asia/Tokyo] PHP   2. require_once() /home/ubuntu/workspace/My-SEB/server.php:21
+[14-Jun-2018 15:16:32 Asia/Tokyo] PHP   3. Illuminate\Foundation\Http\Kernel->handle() /home/ubuntu/workspace/My-SEB/public/index.php:54
+[14-Jun-2018 15:16:32 Asia/Tokyo] PHP   4. Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter() /home/ubuntu/workspace/My-SEB/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:87
+[14-Jun-2018 15:16:32 Asia/Tokyo] PHP   5. Illuminate\Foundation\Http\Kernel->bootstrap() /home/ubuntu/workspace/My-SEB/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:117
+[14-Jun-2018 15:16:32 Asia/Tokyo] PHP   6. Illuminate\Foundation\Application->bootstrapWith() /home/ubuntu/workspace/My-SEB/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:222
+[14-Jun-2018 15:16:32 Asia/Tokyo] PHP   7. Illuminate\Foundation\Bootstrap\BootProviders->bootstrap() /home/ubuntu/workspace/My-SEB/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:203
+[14-Jun-2018 15:16:32 Asia/Tokyo] PHP   8. Illuminate\Foundation\Application->boot() /home/ubuntu/workspace/My-SEB/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php:17
+[14-Jun-2018 15:16:32 Asia/Tokyo] PHP   9. array_walk() /home/ubuntu/workspace/My-SEB/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:718
+[14-Jun-2018 15:16:32 Asia/Tokyo] PHP  10. Illuminate\Foundation\Application->Illuminate\Foundation\{closure}() /home/ubuntu/workspace/My-SEB/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:718
+[14-Jun-2018 15:16:32 Asia/Tokyo] PHP  11. Illuminate\Foundation\Application->bootProvider() /home/ubuntu/workspace/My-SEB/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:717
+[14-Jun-2018 15:16:32 Asia/Tokyo] PHP  12. Illuminate\Container\Container->call() /home/ubuntu/workspace/My-SEB/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:734
+[14-Jun-2018 15:16:32 Asia/Tokyo] PHP  13. call_user_func_array:{/home/ubuntu/workspace/My-SEB/vendor/laravel/framework/src/Illuminate/Container/Container.php:507}() /home/ubuntu/workspace/My-SEB/vendor/laravel/framework/src/Illuminate/Container/Container.php:507
+[14-Jun-2018 15:16:32 Asia/Tokyo] PHP  14. App\Providers\AppServiceProvider->boot() /home/ubuntu/workspace/My-SEB/vendor/laravel/framework/src/Illuminate/Container/Container.php:507
+[14-Jun-2018 15:18:50 Asia/Tokyo] PHP Fatal error:  Class 'App\Providers\View' not found in /home/ubuntu/workspace/My-SEB/app/Providers/AppServiceProvider.php on line 18
+[14-Jun-2018 15:18:50 Asia/Tokyo] PHP Stack trace:
+[14-Jun-2018 15:18:50 Asia/Tokyo] PHP   1. {main}() /home/ubuntu/workspace/My-SEB/server.php:0
+[14-Jun-2018 15:18:50 Asia/Tokyo] PHP   2. require_once() /home/ubuntu/workspace/My-SEB/server.php:21
+[14-Jun-2018 15:18:50 Asia/Tokyo] PHP   3. Illuminate\Foundation\Http\Kernel->handle() /home/ubuntu/workspace/My-SEB/public/index.php:54
+[14-Jun-2018 15:18:50 Asia/Tokyo] PHP   4. Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter() /home/ubuntu/workspace/My-SEB/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:87
+[14-Jun-2018 15:18:50 Asia/Tokyo] PHP   5. Illuminate\Foundation\Http\Kernel->bootstrap() /home/ubuntu/workspace/My-SEB/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:117
+[14-Jun-2018 15:18:50 Asia/Tokyo] PHP   6. Illuminate\Foundation\Application->bootstrapWith() /home/ubuntu/workspace/My-SEB/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:222
+[14-Jun-2018 15:18:50 Asia/Tokyo] PHP   7. Illuminate\Foundation\Bootstrap\BootProviders->bootstrap() /home/ubuntu/workspace/My-SEB/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:203
+[14-Jun-2018 15:18:50 Asia/Tokyo] PHP   8. Illuminate\Foundation\Application->boot() /home/ubuntu/workspace/My-SEB/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php:17
+[14-Jun-2018 15:18:50 Asia/Tokyo] PHP   9. array_walk() /home/ubuntu/workspace/My-SEB/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:718
+[14-Jun-2018 15:18:50 Asia/Tokyo] PHP  10. Illuminate\Foundation\Application->Illuminate\Foundation\{closure}() /home/ubuntu/workspace/My-SEB/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:718
+[14-Jun-2018 15:18:50 Asia/Tokyo] PHP  11. Illuminate\Foundation\Application->bootProvider() /home/ubuntu/workspace/My-SEB/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:717
+[14-Jun-2018 15:18:50 Asia/Tokyo] PHP  12. Illuminate\Container\Container->call() /home/ubuntu/workspace/My-SEB/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:734
+[14-Jun-2018 15:18:50 Asia/Tokyo] PHP  13. call_user_func_array:{/home/ubuntu/workspace/My-SEB/vendor/laravel/framework/src/Illuminate/Container/Container.php:507}() /home/ubuntu/workspace/My-SEB/vendor/laravel/framework/src/Illuminate/Container/Container.php:507
+[14-Jun-2018 15:18:50 Asia/Tokyo] PHP  14. App\Providers\AppServiceProvider->boot() /home/ubuntu/workspace/My-SEB/vendor/laravel/framework/src/Illuminate/Container/Container.php:507

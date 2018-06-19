@@ -26,6 +26,9 @@
         <div class="center jumbotron">
             <div class="text-center">
                 <h1>My 瞬間英作文</h1>
+                
+                <?php echo $is_production; ?>
+                
                 <p>super beta</p>
                 {!! link_to('signup/', 'アカウントを作ってみる（無料）', ['class' => 'btn btn-lg btn-primary'], true) !!}
             </div>
