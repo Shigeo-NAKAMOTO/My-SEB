@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <?php echo $is_production; ?>
     <div class="text-center">
         <h1>アカウント作成</h1>
     </div>

@@ -18,7 +18,6 @@ class RedirectToHttps
         $environment = \App::environment();
         if ( !$this->is_ssl() && $environment === 'production' )
         {
-            echo "redirected to https";
             return redirect('https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
         } else {
             
