@@ -23,7 +23,7 @@
                             </ul>
                         </li>
                     @else
-                        <li>{!! link_to('signup/', 'アカウント作成（無料）', null, true) !!}</li>
+                        <li><a href="{{ url('signup/', null, $is_production) }}">アカウント作成（無料）</a></li>
                         <li>{!! link_to('login/', 'ログイン', null, true) !!}</li>
                     @endif
                 </ul>
