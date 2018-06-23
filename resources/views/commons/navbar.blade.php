@@ -13,18 +13,18 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     @if (Auth::check())
-                        <li>{!! link_to_route('users.index', 'その他のユーザー') !!}</li>
+                        <li><a href="{{ url('users/', null, $is_production) }}">その他のユーザー</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="{{ route('users.show', ['id' => Auth::user()->id]) }}"><span class="glyphicon glyphicon-home"></span> マイページ</a></li>
+                                <li><a href="{{ url('users', ['id' => Auth::user()->id], $is_production) }}"><span class="glyphicon glyphicon-home"></span> マイページ</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li>{!! link_to_route('logout.get', 'ログアウト') !!}</li>
                             </ul>
                         </li>
                     @else
                         <li><a href="{{ url('signup/', null, $is_production) }}">アカウント作成（無料）</a></li>
-                        <li>{!! link_to('login/', 'ログイン', null, true) !!}</li>
+                        <li><a href="{{ url('login/', null, $is_production) }}">ログイン</a></li>
                     @endif
                 </ul>
             </div>
