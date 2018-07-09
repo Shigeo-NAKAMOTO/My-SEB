@@ -27,7 +27,7 @@
             <div class="text-center">
                 <h1>My 瞬間英作文</h1>
                 <p>super beta</p>
-                <a href="{{ url('signup/', null, $is_production) }}" class="btn btn-lg btn-primary">アカウントを作る（無料）</a>
+                {!! link_to_route('signup.get', 'アカウントを作る（無料）', null, ['class' => 'btn btn-lg btn-primary']) !!}
             </div>
         </div>
         <h2>瞬間英作文とは？</h2>
