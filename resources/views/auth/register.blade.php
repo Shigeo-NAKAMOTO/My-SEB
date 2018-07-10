@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             
-            {!! Form::open(['url' => URL::to('/signup', null, true)]) !!}
+            {!! Form::open(['route' => 'signup.post']) !!}
                 <div class="form-group">
                     {!! Form::label('name', 'ニックネーム') !!}
                     <p>（My瞬間英作文の中で使用される呼び名です。好きな名前を登録してください）</p>

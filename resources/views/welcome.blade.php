@@ -19,7 +19,7 @@
                 @endif
             </div>
             <div class="col-md-2 col-md-offset-5">
-            <a href="{{ url('phrases?', null, $is_production) }}" class="btn btn-success btn-block">Start!</a>
+            {!! link_to_route('phrases.index', 'Start!', null, ['class' => 'btn btn-success btn-block']) !!}
             </div>
         </div>
     @else
