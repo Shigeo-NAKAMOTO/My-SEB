@@ -98,6 +98,13 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+        $user->delete();
+        return redirect('/');
+    }
+    
+    public function delete_confirm()
+    {
+        return view('users.del_confirm');
     }
 }

@@ -27,6 +27,7 @@ Route::post('login', 'Auth\AuthController@postLogin')->name('login.post');
 Route::get('logout', 'Auth\AuthController@getLogout')->name('logout.get');
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::resource('users', 'UsersController', ['only' => ['index', 'show']]);
+    Route::resource('users', 'UsersController', ['only' => ['index', 'show', 'destroy']]);
+    Route::get('delete_confirm', 'UsersController@delete_confirm')->name('user.delete_confirm');
     Route::resource('phrases', 'PhrasesController', ['only' => ['index', 'store', 'destroy', 'show']]);
 });
