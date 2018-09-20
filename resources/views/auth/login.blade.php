@@ -22,8 +22,8 @@
                 
                 {!! Form::submit('ログイン', ['class' => 'btn btn-primary btn-block']) !!}
             {!! Form::close() !!}
-            
             <p>ご利用は初めてですか？{!! link_to_route('signup.get', 'こちらでアカウントを作成') !!}できます。</p>
+            <p>パスワードを忘れてしまった方は{!! link_to('password/email', 'こちら') !!}へどうぞ。</p>
         </div>
     </div>
 @endsection
