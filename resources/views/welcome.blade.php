@@ -35,5 +35,6 @@
         <a href="http://mutuno.o.oo7.jp/05_training/05_training02.html" target="_blank">（公式サイトによる解説）</a></p>
         <p>このトレーニングに適した書籍やツールはいろいろありますが、続けていると自分で気に入ったフレーズをトレーニングに組み込みたくなってきます。</p>
         <p>「My瞬間英作文」は気に入ったフレーズや言い回しを登録して反復練習をやりやすくするためのサービスです。</p>
+        <div class="text-center"><p>SendGrid</p></div>
     @endif
 @endsection
