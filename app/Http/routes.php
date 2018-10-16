@@ -37,5 +37,5 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('users', 'UsersController', ['only' => ['index', 'show', 'destroy']]);
     Route::get('delete_confirm', 'UsersController@delete_confirm')->name('user.delete_confirm');
     
-    Route::resource('phrases', 'PhrasesController', ['only' => ['index', 'store', 'destroy', 'show']]);
+    Route::resource('phrases', 'PhrasesController');
 });

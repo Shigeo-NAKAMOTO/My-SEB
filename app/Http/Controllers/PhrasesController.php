@@ -88,7 +88,18 @@ class PhrasesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = [];
+        if( \Auth::check() )
+        {
+            $user = \Auth::user();
+            $selected_phrase = Phrase::find($id);
+            
+            $data = [
+                'user' => $user,
+                'selected_phrase' => $selected_phrase,
+            ];
+        }
+        return view('phrases.edit', $data);
     }
 
     /**
@@ -100,7 +111,14 @@ class PhrasesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        $selected_phrase = Phrase::find($id);
+        $selected_phrase->update([
+            'japanese' => $request->japanese,
+            'english' => $request->english,
+        ]);
+        
+        return redirect('/');
     }
 
     /**
