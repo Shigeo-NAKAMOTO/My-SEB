@@ -3,13 +3,18 @@
     <tr>
         <td>{!! nl2br(e($phrase->japanese)) !!}</td>
         <td>{!! nl2br(e($phrase->english)) !!}</td>
-        <td>
             @if( Auth::user()->id == $phrase->user_id )
-                {!! Form::open(['route' => ['phrases.destroy', $phrase->id], 'method' => 'delete']) !!}
-                    {!! Form::submit('削除する', ['class' => 'btn btn-danger btn-xs']) !!}
+                <td>
+                {!! Form::open(['route' => ['phrases.edit', $phrase->id], 'method' => 'get']) !!}
+                    {!! Form::submit('編 集', ['class' => 'btn btn-info btn-sm']) !!}
                 {!! Form::close() !!}
+                </td>
+                <td>
+                {!! Form::open(['route' => ['phrases.destroy', $phrase->id], 'method' => 'delete']) !!}
+                    {!! Form::submit('削 除', ['class' => 'btn btn-danger btn-sm']) !!}
+                {!! Form::close() !!}
+                </td>
             @endif
-        </td>
     </tr>
 @endforeach
 </table>
