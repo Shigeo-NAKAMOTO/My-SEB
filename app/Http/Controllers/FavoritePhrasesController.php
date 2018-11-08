@@ -7,9 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\User;
-
-class UsersController extends Controller
+class FavoritePhrasesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,11 +16,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $users = User::paginate(10);
-        
-        return view('users.index', [
-            'users' => $users,
-        ]);
+        //
     }
 
     /**
@@ -41,9 +35,10 @@ class UsersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        //
+        \Auth::user()->favor($id);
+        return redirect()->back();
     }
 
     /**
@@ -54,17 +49,7 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        $user = User::find($id);
-        $phrases = $user->phrases()->orderBy('created_at', 'asc')->paginate(10);
-        
-        $data = [
-            'user' => $user,
-            'phrases' => $phrases,
-        ];
-        
-        $data += $this->counts($user);
-        
-        return view('users.show', $data);
+        //
     }
 
     /**
@@ -98,29 +83,7 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        $user = User::find($id);
-        $user->delete();
-        return redirect('/');
-    }
-    
-    public function delete_confirm()
-    {
-        return view('users.del_confirm');
-    }
-    
-    public function favorites($id)
-    {
-        $user = User::find($id);
-        $favorites = $user->favorites()->orderBy('created_at', 'desc')->paginate(10);
-        $count_favorites = $user->favorites()->count();
-        
-        $data = [
-            'user' => $user,
-            'favorites' => $favorites,
-        ];
-        
-        $data += $this->counts($user);
-        
-        return view('users.favorites', $data);
+        \Auth::user()->unfavor($id);
+        return redirect()->back();
     }
 }

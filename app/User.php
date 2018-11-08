@@ -45,4 +45,43 @@ class User extends Model implements AuthenticatableContract,
     {
         return $this->hasMany(Phrase::class);
     }
+    
+    public function favorites()
+    {
+        return $this->belongsToMany(Phrase::class, 'favorites', 'user_id', 'phrase_id')->withTimestamps();
+    }
+    
+    public function favor($phraseId)
+    {
+        // 既にお気に入りに登録しているかの確認
+        $exist = $this->is_favoring($phraseId);
+        
+        if ($exist) {
+            // 既にお気に入りに登録していれば何もしない
+            return false;
+        } else {
+            // まだお気に入りに登録していなければ登録する
+            $this->favorites()->attach($phraseId);
+            return true;
+        }
+    }
+    
+    public function unfavor($phraseId)
+    {
+        // 既にお気に入りに登録しているかの確認
+        $exist = $this->is_favoring($phraseId);
+        
+        if ($exist) {
+            // 既にお気に入りに登録していれば外す
+            $this->favorites()->detach($phraseId);
+            return true;
+        } else {
+            // まだお気に入りに登録していなければ何もしない
+            return false;
+        }
+    }
+    
+    public function is_favoring($phraseId) {
+        return $this->favorites()->where('phrase_id', $phraseId)->exists();
+    }
 }
