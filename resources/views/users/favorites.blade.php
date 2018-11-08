@@ -21,8 +21,8 @@
                 <li role="presentation" class="{{ Request::is('users/*/favorites') ? 'active' : '' }}"><a href="{{ route('users.favorites', ['id' => $user->id]) }}">お気に入り</a></li>
                 <li><a href="#">お気に入られ</a></li>
             </ul>
-            @if( count($phrases) > 0 )
-                @include('phrases.phrases', ['phrases' => $phrases])
+            @if( count($favorites) > 0 )
+                @include('phrases.favorites', ['favorites' => $favorites])
             @endif
         </div>
     </div>

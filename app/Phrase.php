@@ -12,4 +12,9 @@ class Phrase extends Model
     {
         return $this->belongsTo(User::class);
     }
+    
+    public function is_favored_by()
+    {
+        return $this->belongsToMany(User::class, 'favorites', 'phrase_id', 'user_id')->withTimestamps();
+    }
 }

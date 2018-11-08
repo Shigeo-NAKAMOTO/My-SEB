@@ -37,5 +37,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('users', 'UsersController', ['only' => ['index', 'show', 'destroy']]);
     Route::get('delete_confirm', 'UsersController@delete_confirm')->name('user.delete_confirm');
     
+    Route::group(['prefix' => 'users/{id}'], function () { 
+        Route::get('favorites', 'UsersController@favorites')->name('users.favorites');
+    });
+    
     Route::resource('phrases', 'PhrasesController');
+    Route::group(['prefix' => 'phrases/{id}'], function () { 
+        Route::post('favor', 'FavoritePhrasesController@store')->name('phrase.favor');
+        Route::delete('unfavor', 'FavoritePhrasesController@destroy')->name('phrase.unfavor');
+    });
 });
