@@ -56,10 +56,12 @@ class UsersController extends Controller
     {
         $user = User::find($id);
         $phrases = $user->phrases()->orderBy('created_at', 'asc')->paginate(10);
+        $count_favorites = $user->favorites()->count();
         
         $data = [
             'user' => $user,
             'phrases' => $phrases,
+            'count_favorites' => $count_favorites,
         ];
         
         $data += $this->counts($user);
@@ -117,6 +119,7 @@ class UsersController extends Controller
         $data = [
             'user' => $user,
             'favorites' => $favorites,
+            'count_favorites' => $count_favorites,
         ];
         
         $data += $this->counts($user);
